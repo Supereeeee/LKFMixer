@@ -8,7 +8,7 @@ from basicsr.archs.LKFMixer_arch import LKFMixer
 
 def get_model(model_id=0, scale=4):
     if model_id == 0:
-        model = LKFMixer(in_channels=3, channels=56, out_channels=3, upscale=4, num_block=12, large_kernel=31,
+        model = LKFMixer(in_channels=3, channels=64, out_channels=3, upscale=4, num_block=12, large_kernel=31,
                          split_factor=0.25)
 
     elif model_id == 1:
@@ -54,7 +54,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Flops")
-    parser.add_argument("--model_id", default=1, type=int)
+    parser.add_argument("--model_id", default=0, type=int)
     parser.add_argument("--scale", default=4, type=int)
     args = parser.parse_args()
     main(args)
